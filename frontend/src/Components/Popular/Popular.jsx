@@ -5,7 +5,7 @@ import Item from '../Item/Item'
 const Popular = () => {
   const [data_product, setData_product] = useState([]);
   useEffect(() => {
-    fetch('http://localhost:4000/popularinwomen')
+    fetch('https://shopease-backend-dqya.onrender.com/popularinwomen')
     .then((response) => response.json())
     .then((data) => setData_product(data));
   }, []);
