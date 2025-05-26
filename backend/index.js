@@ -39,7 +39,7 @@ app.use('/images', express.static('upload/images'))
 app.post("/upload", upload.single('product'), (req, res) => {
     res.json({
         success: 1,
-        image_url: `http://localhost:${port}/images/${req.file.filename}`
+        image_url: `${process.env.BASE_URL}/images/${req.file.filename}`
         // this url produced can then be used to acces the uploaded image
         // the image uploaded will be in images folder in upload
     });
