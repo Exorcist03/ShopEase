@@ -16,13 +16,13 @@ const ShopContextProvider = (props) => {
     const [cartItems, setcartItems] = useState(getDefaultCart()); // this initialises a cart with each product count initially zero
     
     useEffect(() => {
-        fetch('http://localhost:4000/allproducts')
+        fetch('https://shopease-backend-dqya.onrender.com/allproducts')
         .then((response) => response.json())
         .then((data) => setAll_product(data));
 
         // if the auth token is avail then add the cart item 
         if(localStorage.getItem('auth-token')) {
-            fetch('http://localhost:4000/getcart', {
+            fetch('https://shopease-backend-dqya.onrender.com/getcart', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/form-data',
@@ -41,7 +41,7 @@ const ShopContextProvider = (props) => {
         setcartItems((prev) =>({...prev, [itemId] : prev[itemId] + 1}));
         // console.log(cartItems)
         if(localStorage.getItem('auth-token')) { // user is signed in 
-            fetch('http://localhost:4000/addtocart',{ 
+            fetch('https://shopease-backend-dqya.onrender.com/addtocart',{ 
                 method: 'POST',
                 headers: {
                     Accept: 'application/form-data',
@@ -58,7 +58,7 @@ const ShopContextProvider = (props) => {
         setcartItems((prev) =>({...prev, [itemId] : prev[itemId] - 1})); // split operator used
 
         if(localStorage.getItem('auth-token')) {
-            fetch('http://localhost:4000/removefromcart', {
+            fetch('https://shopease-backend-dqya.onrender.com/removefromcart', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/form-data',
