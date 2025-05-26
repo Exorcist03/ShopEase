@@ -6,7 +6,7 @@ const ListProduct = () => {
     const [allproduct, setAllproducts] = useState([]);
 
     const fetchInfo = async () => {
-        await fetch('http://localhost:4000/allproducts')
+        await fetch('https://shopease-backend-dqya.onrender.com/allproducts')
         .then((res) => res.json())
         .then((data) => {setAllproducts(data)});
     }
@@ -17,7 +17,7 @@ const ListProduct = () => {
     },[]) // square bracket so that only fetched once
 
     const removeproduct =  async (id) => {
-        await fetch('http://localhost:4000/removeproduct', {
+        await fetch('https://shopease-backend-dqya.onrender.com/removeproduct', {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
