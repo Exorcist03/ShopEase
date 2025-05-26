@@ -27,7 +27,7 @@ const AddProduct = () => {
         let formData = new FormData();
         formData.append('product', image);
 
-        await fetch('http://localhost:4000/upload', {
+        await fetch('https://shopease-backend-dqya.onrender.com/upload', {
             method: 'POST',
             headers: {
                 Accept: 'application/json'
@@ -38,7 +38,7 @@ const AddProduct = () => {
             // image stored using multer and got the url
             product.image = responseData.image_url; 
             // for the product we are getting the image url
-            await fetch('http://localhost:4000/addproduct', {
+            await fetch('https://shopease-backend-dqya.onrender.com/addproduct', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/json',
