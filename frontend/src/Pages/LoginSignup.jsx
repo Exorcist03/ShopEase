@@ -24,7 +24,7 @@ const LoginSignup = () => {
     // console.log(formData.username)
     console.log("Login function executed: ", formData);
     let responseData;
-    await fetch('http://localhost:4000/login', {
+    await fetch('https://shopease-backend-dqya.onrender.com/login', {
       method: 'POST',
       headers: {
         Accept: 'application/form-data',
@@ -47,7 +47,7 @@ const LoginSignup = () => {
     // alert("signup")
     console.log("Signup function executed", formData.password)
     let responseData;
-    await fetch('http://localhost:4000/signup', {
+    await fetch('https://shopease-backend-dqya.onrender.com/signup', {
       method: 'POST',
       headers: {
         Accept: 'application/form-data',
